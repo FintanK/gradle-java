@@ -1,0 +1,28 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+// Specifiying main class
+mainClassName = 'gradlejava.GradleJava'
+
+// Repositories
+repositories {
+    mavenCentral()
+}
+
+
+jar {
+    baseName = 'gs-gradle'
+    version =  '0.1.0'
+}
+
+// Project dependencies
+dependencies {
+    compile "joda-time:joda-time:2.2"
+}
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
